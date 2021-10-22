@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Output</title>
+        <link rel="stylesheet" href="./css/output2.css">
+    </head>
+    <body>
+        
+        <header>
+			<div class="container">
+				<div class="icon">
+					<img src="images/icon1.png" width="150" alt="toro's picture">
+				</div>
+				<div class="info">
+					<h1>your information</h1><br>
+					<p>あなたの大切な個人情報を管理します</p>
+				</div>
+			</div>
+		</header>
+        
+		
+	<!--ここまではヘッダー
+	ここ以降を変更したい-->
+		<main>
+		<div class="textbody">
+		
+        <div class="uk-container">
+            <div class="uk-card uk-card-body uk-card-primary">
+            </div>
+        </div>
+
+        <script src="dist/bundle.js"></script>
+        <script>
+            function change(ctrl){
+                var g = document.getElementById('TEXT');   
+                g.value = ctrl.value;
+            }
+		</script>
+
+            <h2>Webサイト名:<a href="#">押したらリンク先に移動したい<output name="site-name"></output></a></h2>
+            <!--サーバーからやってくるデータだと仮定-->
+            <!--下のformだとresultのvalueにNAMEのvalueを代入するという意味-->
+            <form oninput="result.value= NAME.value">
+                <p>氏名：<input type="text" name="NAME"/></p>      
+                <p>氏名：<output name="result"></output></p>
+            </form>
+            <form>
+				
+                <!--<li> <p>メールアドレス：<input type="text" name="email"></p></li>
+                <li><p>サイト名：<input type="text" name="NAME"></p></li>
+                <li><p>URL：<input type="text" name="email"></p></li>
+                <li><p>ユーザー名：<input type="text" name="NAME"></p></li>
+                <li><p>パスワード：<input type="text" name=""></p></li>
+                <li><p>性別:<input type="radio" name="gender" value="male" />男性
+                <input type="radio" name="gender" value="female" checked/>女性
+                <input type="radio" name="gender" value="other" checked/>その他</p></li>  -->
+ 
+                <!--出力-->
+				<p><span class="m1">サイト名</span>：<input type="text" name="company"></p>
+                <p><span class="m2">URL</span>：<input type="text" name="url" size="40"></p>
+                <p><span class="m3">ユーザー名</span>：<input type="text" name="user" size="20"></p>
+                <p><span class="m4">パスワード</span>：<input type="text" name="pwd"></p>
+                <p><span class="m5">氏名</span>：<input type="text" name="name"></p>
+                <p><span class="m6">生年月日</span>：
+                <p><span class="m7">性別</span>:<input type="text" name="gender"></p>
+                <p><span class="m8">電話番号</span>：<input type="text" name="tel" size="8">
+                   - <input type="text" name="NAME" size="8">
+                   - <input type="text" name="NAME" size="8"></p>
+                <p><span class="m9">携帯番号</span>：<input type="text" name="tel2" size="8">
+                   - <input type="text" name="NAME" size="8">
+                   - <input type="text" name="NAME" size="8"></p>
+                <p><span class="m10">メールアドレス</span>：<input type="text" name="email">@
+                    <input list="emailadress" id="email" name="emailadress"s></p>
+                <p><span class="m11">住所</span>：<input type="text" name="pref_id"></p>
+           <div class="returnbutton"><a href="./">HOME画面へ</a></div>
+			
+			</form>
+					
+		</div>
+		</main>
+    </body>
+</html>

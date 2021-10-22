@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>CANVAS TEST</title>
+<!--[if lt IE 9]>                               // Explorer Canvasを読み込む
+<script src="lib/excanvas.js"></script>
+<![endif]-->
+<title>Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./css/home.css" />
+<link rel="stylesheet" href="./css/style.css" > <!--多分ない-->
+
+<script>
+window.onload = function() {
+    var cv = document.getElementById('cv1');    // 要素を得る
+    if (!cv) { return; }
+
+    var ct = cv.getContext('2d');               // 2D(平面)コンテキストを得る
+    if (!ct) { return; }
+
+    //cv.setAttribute("width", ct.width.toString());
+    //cv.setAttribute("height", ct.height.toString());
+
+    let width = cv.width;
+    let height= cv.height;
+    let r = 40;
+    let dist = 200;
+
+    let num_circles = 5;
+    let angle = Math.PI*2/num_circles;
+    let nowang = 0;
+    let aroundText = ["姓名", "Eメール", "住所", "生年月日", "性別"];
+
+    let centerx = 0;
+    let centery = 0;
+    let centerText = "Amazon";
+
+
+    ct.beginPath();
+    ct.fillStyle = '#97973F';
+    ct.arc(width/2, height/2, r, 0, Math.PI * 2, false);  // 円を描画する
+    ct.fill();
+
+    centerx = width/2;
+    centery = height/2;
+
+    for(let i = 0; i < num_circles; i++){
+	    let x =  centerx+(dist*Math.cos(nowang));
+	    let y =  centery+(dist*Math.sin(nowang));
+
+	    ct.beginPath();
+	    ct.fillStyle = '#97973f';
+	    ct.arc(x, y, r, 0, Math.PI * 2, false);  // 円を描画する
+    	    ct.fill();
+
+       	    makeEdge(ct,centerx, centery, x, y);
+
+	    ct.fillStyle = '#000000';
+	    ct.font = 'normal 18pt "メイリオ"';
+	    ct.fillText(aroundText[i], x-30, y+10);
+
+            nowang += angle;
+    }
+    ct.fillStyle = '#000000';
+    ct.font = 'normal 18pt "メイリオ"';
+    ct.fillText(centerText, centerx-30, centery+10);
+
+}
+function makeEdge(ct, cetx, cety,x, y){
+    ct.beginPath();
+    ct.strokeStyle = '#97973f';
+    ct.moveTo(x, y);
+    ct.lineTo(cetx, cety);                        // 線を描画する
+    ct.closePath();
+    ct.stroke();
+}
+</script>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<div class="icon">
+				<img src="images/icon1.png" width="150" alt="toro's picture">
+			</div>
+			<div class="info">
+				<h1>your information</h1><br>
+				<p>あなたの大切な個人情報を管理します</p>
+			</div>
+		</div>
+	</header>
+        <main>
+		<div class="textbody">
+ 			<canvas id="cv1" width="600" height="600"></canvas>
+		</div>
+	</main>
+</body>
+</html>

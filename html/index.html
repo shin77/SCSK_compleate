@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="./css/home.css" />
+        <link rel="stylesheet" href="./css/style.css" > <!--多分ない-->
+        
+    </head>
+    <body>
+        
+		<header>
+			<div class="container">
+				<div class="icon">
+					<img src="images/icon1.png" width="150" alt="toro's picture">
+				</div>
+				<div class="info">
+					<h1>your information</h1><br>
+					<p>あなたの大切な個人情報を管理します</p>
+				</div>
+			</div>
+		</header>
+		
+		
+		
+        <main>
+		<div class="textbody">
+		
+          <form method="POST" action="sample.cgi">
+			
+			<!--<input type="button" onclick="location.href='input.html'" value="入力画面へ" class="inputbutton">
+			<input type="button" onclick="location.href='output2.html'" value="出力画面へ" class="outputbutton">
+			<input type="button" onclick="location.href='input.html'" value="あなたの情報" class="informationbutton">-->
+			<a href="input.html" class="inputbutton">入力画面へ</a>
+			<a href="../cgi-bin/dashboard.py" class="outputbutton">出力画面へ</a>
+			<a href="input.html" class="informationbutton">あなたの情報</a>
+			
+            
+        </form>
+		
+		</div>
+		</main>
+    </body>
+</html>
